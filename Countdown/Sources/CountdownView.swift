@@ -4,6 +4,7 @@ import ScreenSaver
 final class CountdownView: ScreenSaverView {
 
 	// MARK: - Properties
+    var wasStopped = false
 
 	private let placeholderLabel: Label = {
 		let view = Label()
@@ -61,7 +62,6 @@ final class CountdownView: ScreenSaverView {
 
 
 	// MARK: - Initializers
-
 	convenience init() {
 		self.init(frame: .zero, isPreview: false)
 	}
@@ -77,12 +77,21 @@ final class CountdownView: ScreenSaverView {
 	}
 
 	deinit {
-		NotificationCenter.default.removeObserver(self)
+        clearNotifications()
 	}
 	
 
-	// MARK: - NSView
+    // MARK: - Lifecycle stuff
+    override func startAnimation() {
+        super.startAnimation()
+    }
 
+    override func stopAnimation() {
+        super.stopAnimation()
+        wasStopped = true
+    }
+
+	// MARK: - NSView
 	override func draw(_ rect: NSRect) {
 		NSColor.black.setFill()
 		NSBezierPath.fill(bounds)
@@ -101,8 +110,15 @@ final class CountdownView: ScreenSaverView {
 
 
 	// MARK: - ScreenSaverView
-
 	override func animateOneFrame() {
+        if(wasStopped) {
+            // hide all texts
+            placeholderLabel.isHidden = true
+            placesView.isHidden = true
+            return
+        }
+    
+        // update content
 		placeholderLabel.isHidden = date != nil
 		placesView.isHidden = !placeholderLabel.isHidden
 
@@ -155,8 +171,45 @@ final class CountdownView: ScreenSaverView {
 		])
 
 		// Listen for configuration changes
-		NotificationCenter.default.addObserver(self, selector: #selector(dateDidChange), name: .dateDidChange, object: nil)
+        setNotifications();
 	}
+
+    func setNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(dateDidChange), name: .dateDidChange, object: nil)
+
+        // https://mastodon.social/@jwz/111185848804264757
+        // https://github.com/JohnCoates/Aerial/blob/master/Aerial/Source/Views/AerialView.swift
+        NSWorkspace.shared.notificationCenter.addObserver(
+                self, selector: #selector(onSleepNote(note:)),
+                name: NSWorkspace.willSleepNotification, object: nil)
+
+        DistributedNotificationCenter.default.addObserver(self,
+            selector: #selector(CountdownView.willStart(_:)),
+            name: Notification.Name("com.apple.screensaver.willstart"), object: self)
+        DistributedNotificationCenter.default.addObserver(self,
+            selector: #selector(CountdownView.willStop(_:)),
+            name: Notification.Name("com.apple.screensaver.willstop"), object: self)
+    }
+
+    func clearNotifications() {
+        NotificationCenter.default.removeObserver(self)
+        DistributedNotificationCenter.default.removeObserver(self)
+    }
+
+    @objc func onSleepNote(note: Notification) {
+        if #available(macOS 14.0, *) {
+            exit(0)
+        }
+    }
+    @objc func willStart(_ aNotification: Notification) {
+    }
+
+    @objc func willStop(_ aNotification: Notification) {
+        if #available(macOS 14.0, *) {
+            exit(0)
+        }
+        self.stopAnimation()
+    }
 
 	/// Date changed
 	@objc private func dateDidChange(_ notification: NSNotification?) {
@@ -199,4 +252,5 @@ final class CountdownView: ScreenSaverView {
 
 		return NSFont(descriptor: fontDescriptor, size: max(4, fontSize))!
 	}
+
 }
