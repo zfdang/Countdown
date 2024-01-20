@@ -179,16 +179,12 @@ final class CountdownView: ScreenSaverView {
 
         // https://mastodon.social/@jwz/111185848804264757
         // https://github.com/JohnCoates/Aerial/blob/master/Aerial/Source/Views/AerialView.swift
-        NSWorkspace.shared.notificationCenter.addObserver(
-                self, selector: #selector(onSleepNote(note:)),
-                name: NSWorkspace.willSleepNotification, object: nil)
-
         DistributedNotificationCenter.default.addObserver(self,
             selector: #selector(CountdownView.willStart(_:)),
-            name: Notification.Name("com.apple.screensaver.willstart"), object: self)
+            name: Notification.Name("com.apple.screensaver.willstart"), object: nil)
         DistributedNotificationCenter.default.addObserver(self,
             selector: #selector(CountdownView.willStop(_:)),
-            name: Notification.Name("com.apple.screensaver.willstop"), object: self)
+            name: Notification.Name("com.apple.screensaver.willstop"), object: nil)
     }
 
     func clearNotifications() {
@@ -196,11 +192,6 @@ final class CountdownView: ScreenSaverView {
         DistributedNotificationCenter.default.removeObserver(self)
     }
 
-    @objc func onSleepNote(note: Notification) {
-        if #available(macOS 14.0, *) {
-            exit(0)
-        }
-    }
     @objc func willStart(_ aNotification: Notification) {
     }
 

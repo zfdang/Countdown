@@ -18,7 +18,7 @@
             <rect key="contentRect" x="196" y="240" width="266" height="96"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1728" height="1079"/>
             <view key="contentView" misplaced="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="303" height="95"/>
+                <rect key="frame" x="0.0" y="0.0" width="266" height="96"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cf0-hz-k84">
@@ -33,8 +33,8 @@
                         <rect key="frame" x="128" y="52" width="161" height="28"/>
                         <datePickerCell key="cell" borderStyle="bezel" alignment="left" useCurrentDate="YES" id="6zn-zD-imf">
                             <font key="font" metaFont="system"/>
-                            <date key="date" timeIntervalSinceReferenceDate="727450787.55004394">
-                                <!--2024-01-20 13:39:47 +0000-->
+                            <date key="date" timeIntervalSinceReferenceDate="727456545.98538303">
+                                <!--2024-01-20 15:15:45 +0000-->
                             </date>
                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
