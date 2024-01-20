@@ -1,4 +1,4 @@
-# Countdown
+# Countdown 倒计时屏幕保护程序
 
 Coundown is a Mac OS X screen saver forked from [Motivation](https://github.com/soffes/Motivation). You can use it to countdown to any date you want. (If you pick a date in the past, it will count up from that date instead.)
 
