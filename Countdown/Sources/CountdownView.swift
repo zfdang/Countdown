@@ -8,7 +8,7 @@ final class CountdownView: ScreenSaverView {
 	private let placeholderLabel: Label = {
 		let view = Label()
 		view.translatesAutoresizingMaskIntoConstraints = false
-		view.stringValue = "Open Screen Saver Options to set your date."
+		view.stringValue = "Open Screen Saver Options to set your date.\n在设置里指定目标日期。"
 		view.textColor = .white
 		view.isHidden = true
 		return view
@@ -17,28 +17,28 @@ final class CountdownView: ScreenSaverView {
 	private let daysView: PlaceView = {
 		let view = PlaceView()
 		view.translatesAutoresizingMaskIntoConstraints = false
-		view.detailTextLabel.stringValue = "DAYS"
+		view.detailTextLabel.stringValue = "DAYS(天)"
 		return view
 	}()
 
 	private let hoursView: PlaceView = {
 		let view = PlaceView()
 		view.translatesAutoresizingMaskIntoConstraints = false
-		view.detailTextLabel.stringValue = "HOURS"
+		view.detailTextLabel.stringValue = "HOURS(小时)"
 		return view
 	}()
 
 	private let minutesView: PlaceView = {
 		let view = PlaceView()
 		view.translatesAutoresizingMaskIntoConstraints = false
-		view.detailTextLabel.stringValue = "MINUTES"
+		view.detailTextLabel.stringValue = "MINUTES(分)"
 		return view
 	}()
 
 	private let secondsView: PlaceView = {
 		let view = PlaceView()
 		view.translatesAutoresizingMaskIntoConstraints = false
-		view.detailTextLabel.stringValue = "SECONDS"
+		view.detailTextLabel.stringValue = "SECONDS(秒)"
 		return view
 	}()
 

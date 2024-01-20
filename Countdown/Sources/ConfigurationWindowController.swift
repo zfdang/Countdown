@@ -12,6 +12,7 @@ final class ConfigurationWindowController: NSWindowController {
 	// MARK: - Action
 
 	@IBAction func close(_ sender: Any?) {
-		window?.close()
+        // Now close the sheet (this works on older macOS versions too)
+        window?.sheetParent?.endSheet(window!)
 	}
 }

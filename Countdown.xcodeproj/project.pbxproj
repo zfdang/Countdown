@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,7 +15,6 @@
 		218D6EEB20FC3CEB0029D4A9 /* ConfigurationWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218D6EE420FC3CEB0029D4A9 /* ConfigurationWindowController.swift */; };
 		218D6EF520FC3CF00029D4A9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218D6EEE20FC3CF00029D4A9 /* MainMenu.xib */; };
 		218D6EF620FC3CF00029D4A9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 218D6EF020FC3CF00029D4A9 /* Images.xcassets */; };
-		218D6EF720FC3CF00029D4A9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 218D6EF220FC3CF00029D4A9 /* Info.plist */; };
 		218D6EF820FC3CF00029D4A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218D6EF420FC3CF00029D4A9 /* AppDelegate.swift */; };
 		218D6EF920FC3D440029D4A9 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218D6EE020FC3CEB0029D4A9 /* Label.swift */; };
 		218D6EFA20FC3D440029D4A9 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218D6EE120FC3CEB0029D4A9 /* Preferences.swift */; };
@@ -204,13 +203,14 @@
 		21F2221D1B73B5AC00B9A11A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1510;
 				ORGANIZATIONNAME = "Sam Soffes";
 				TargetAttributes = {
 					21F222251B73B5AC00B9A11A = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = UP9C8XM22A;
+						LastSwiftMigration = 1510;
 						ProvisioningStyle = Automatic;
 					};
 					21F222391B73B60100B9A11A = {
@@ -220,7 +220,7 @@
 			};
 			buildConfigurationList = 21F222201B73B5AC00B9A11A /* Build configuration list for PBXProject "Countdown" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -253,7 +253,6 @@
 				218D6EF520FC3CF00029D4A9 /* MainMenu.xib in Resources */,
 				218D6EF620FC3CF00029D4A9 /* Images.xcassets in Resources */,
 				218D6EFE20FC3D4E0029D4A9 /* Configuration.xib in Resources */,
-				218D6EF720FC3CF00029D4A9 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +302,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -321,15 +321,18 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -358,6 +361,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -376,15 +380,18 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -408,16 +415,24 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = UP9C8XM22A;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 449R32RPB6;
 				INFOPLIST_FILE = "$(SRCROOT)/Countdown/Support/Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = com.samsoffes.countdown;
 				PRODUCT_NAME = Countdown;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Debug;
@@ -428,15 +443,23 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = UP9C8XM22A;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 449R32RPB6;
 				INFOPLIST_FILE = "$(SRCROOT)/Countdown/Support/Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = com.samsoffes.countdown;
 				PRODUCT_NAME = Countdown;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Release;
@@ -447,12 +470,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Preview/Support/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.samsoffes.countdown-preview";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -465,8 +493,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				INFOPLIST_FILE = Preview/Support/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.samsoffes.countdown-preview";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
