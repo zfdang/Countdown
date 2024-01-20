@@ -4,12 +4,16 @@ Coundown is a Mac OS X screen saver forked from [Motivation](https://github.com/
 
 You can configure the date once you picked it in Screen Saver Preferences in System Preferences.
 
-[![Countdown Screen Saver](Countdown.gif)](https://github.com/soffes/Countdown/releases)
+[![Countdown Screen Saver](countdown.gif)]
+
+## Improvements
+
+增加了中文提示；修正了配置项无法关闭的问题
 
 
 ## Installation
 
-**[Download the latest release](https://github.com/soffes/Countdown/releases).** Unzip and double-click.
+**[Download the latest release](https://github.com/zfdang/Countdown/releases).** Unzip and double-click.
 
 If you see a message saying this screen saver doesn't work with this version of OS X and you have 10.11 or higher, just quit System Preferences and relaunch it. The screen savers is pretty buggy when it comes to screen savers written in Swift.
 
