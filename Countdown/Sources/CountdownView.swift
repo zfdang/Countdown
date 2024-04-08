@@ -193,12 +193,14 @@ final class CountdownView: ScreenSaverView {
     }
 
     @objc func willStart(_ aNotification: Notification) {
+        NSLog("willstart")
     }
 
     @objc func willStop(_ aNotification: Notification) {
         if #available(macOS 14.0, *) {
             exit(0)
         }
+        NSLog("willStop")
         self.stopAnimation()
     }
 
